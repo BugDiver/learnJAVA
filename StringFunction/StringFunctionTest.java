@@ -32,7 +32,7 @@ public class StringFunctionTest{
 	}
 	@Test
 	public void strip() {
-		System.out.println(lib.strip("hello world  !!!"));
 		assertTrue(lib.strip("hello world  !!!").equals("helloworld!!!"));
+		assertEquals(lib.strip("spaces should be removed"),"spacesshouldberemoved");
 	}
 }

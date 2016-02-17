@@ -35,4 +35,5 @@ public class StringFunction{
 	public String strip(String text){
 		return text.replaceAll(" ","");
 	}
+
 }
