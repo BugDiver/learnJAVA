@@ -1,14 +1,38 @@
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 import org.junit.Test;
+import org.junit.*;
 
 public class StringFunctionTest{
+	StringFunction lib;
 
-  @Test
-  public void countVowels() {
-    StringFunction s = new StringFunction();
-    assertEquals(s.countVowels("lalit"),2);
-    assertEquals(s.countVowels("Lalita"),3);
-    assertEquals(s.countVowels("LALAti"),3);
-  }
+	@Before
+	public void setUp(){
+		lib = new StringFunction();
+	}
 
+	@Test
+	public void countVowels() {
+		assertEquals(lib.countVowels("lalit"),2);
+		assertEquals(lib.countVowels("Lalita"),3);
+		assertEquals(lib.countVowels("LALAti"),3);
+	}
+
+	@Test
+	public void countConsonants() {
+		assertEquals(lib.countConsonants("lalit"),3);
+		assertEquals(lib.countConsonants("Lal  123iTA"),3);
+		assertEquals(lib.countConsonants("LAL123#$%^Ati"),3);
+	}
+
+	@Test
+	public void isPalindrome() {
+		assertTrue(lib.isPalindrome("oho"));
+		assertTrue(lib.isPalindrome("malayalam"));
+		assertTrue(lib.isPalindrome("mom"));
+	}
+	@Test
+	public void strip() {
+		System.out.println(lib.strip("hello world  !!!"));
+		assertTrue(lib.strip("hello world  !!!").equals("helloworld!!!"));
+	}
 }
